@@ -8,7 +8,7 @@
 ### countries
 `https://xs489works.xsrv.jp/GeoParquet-Data/Overture-Maps-Data/countries.parquet`,80MB
 
-## PMTiels
+## PMTiles
 ### buildings(japan)
 `https://xs489works.xsrv.jp/pmtiles-data/Overture-Maps-Data/buildings-japan.pmtiles`,3.6GB
 ### places(japan)
