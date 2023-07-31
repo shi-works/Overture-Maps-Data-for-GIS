@@ -17,4 +17,4 @@
 ## Public Website
 https://shi-works.github.io/Overture-Maps-Data-for-GIS/
 
-MapLibre GL JS is based on  Thanks!
+MapLibre GL JS is based on https://bdon.github.io/overture-tiles/places.html Thanks!
