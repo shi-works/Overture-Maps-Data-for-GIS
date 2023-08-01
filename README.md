@@ -17,7 +17,10 @@
 `https://xs489works.xsrv.jp/pmtiles-data/Overture-Maps-Data/buildings-japan.pmtiles`,3.6GB
 ### places(japan)
 `https://xs489works.xsrv.jp/pmtiles-data/Overture-Maps-Data/places-japan.pmtiles`,608MB
-
+### transportation-connector(japan)
+`https://xs489works.xsrv.jp/pmtiles-data/Overture-Maps-Data/transportation-connector-japan.pmtiles`,1GB
+### transportation-segment(japan)
+`https://xs489works.xsrv.jp/pmtiles-data/Overture-Maps-Data/transportation-segment-japan.pmtiles`,8.9GB
 ## Public Website
 https://shi-works.github.io/Overture-Maps-Data-for-GIS/
 
