@@ -9,6 +9,7 @@ LOAD httpfs;
 SET s3_region='us-west-2';
 
 -- SQLコマンドを実行
+-- admins
 COPY (
     SELECT
            type,
@@ -26,6 +27,7 @@ COPY (
 WITH (FORMAT GDAL, DRIVER 'GeoJSON');
 
 -- SQLコマンドを実行
+-- buildings-japan
 COPY (
     SELECT
            id,
@@ -44,6 +46,7 @@ COPY (
 WITH (FORMAT GDAL, DRIVER 'FlatGeobuf');
 
 -- SQLコマンドを実行
+-- places
 COPY (
      SELECT
       id,
@@ -67,6 +70,7 @@ COPY (
 ) TO 'places.csv' (HEADER, DELIMITER ',');
 
 -- SQLコマンドを実行
+-- places-japan
 COPY (
      SELECT
       id,
@@ -91,3 +95,26 @@ COPY (
       AND json_extract(bbox,'$.miny') BETWEEN 20.425378 AND 45.551483
 ) TO 'places-japan.csv' 
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
+
+-- SQLコマンドを実行
+-- transportation-connector-japan
+COPY (
+     SELECT
+      id,
+      updatetime,
+      version,
+      level,
+      subtype,
+      connectors,
+      road,
+      sources,
+      json_extract(bbox,'$.minx') as x,
+      json_extract(bbox,'$.miny') as y
+      FROM read_parquet('s3://overturemaps-us-west-2/release/2023-07-26-alpha.0/theme=transportation/type=connector/*')
+      WHERE json_extract(bbox,'$.minx') BETWEEN 122.934570 AND 153.986672 
+      AND json_extract(bbox,'$.miny') BETWEEN 20.425378 AND 45.551483
+) TO 'transportation-connector-japan.csv' 
+WITH (FORMAT CSV, HEADER, DELIMITER ',');
+
+
+
